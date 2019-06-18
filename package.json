@@ -10,13 +10,16 @@
     "prestart": "npm run -s build-all",
     "build": "stencil build --prerender",
     "build.ci": "npm run build-all && stencil build --prerender --ci",
-    "prebuild": "npm run -s build-all",
+    "prebuild": "npm run translate && npm run -s build-all",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "build-all": "ts-node -P scripts/tsconfig.json scripts/build-all",
     "build-data": "ts-node -P scripts/tsconfig.json scripts/build-data",
     "build-pages": "ts-node -P scripts/tsconfig.json scripts/build-pages",
     "build-menus": "ts-node -P scripts/tsconfig.json scripts/build-menus",
-    "watch-pages": "ts-node -P scripts/tsconfig.json scripts/watch-pages"
+    "watch-pages": "ts-node -P scripts/tsconfig.json scripts/watch-pages",
+    "build-case": "git clone https://github.com/ionic-hk/who-use-ionic.git case && cd case && npm install && npm run build && cd .. && mv case/www www/case && rm -rf case && echo '/case/* /case/index.html 200' >> www/_redirects",
+    "translate": "ts-node -P scripts/tsconfig.json scripts/build-translate apply",
+    "translate:create": "ts-node -P scripts/tsconfig.json scripts/build-translate create && ts-node -P scripts/tsconfig.json scripts/build-translate diff"
   },
   "dependencies": {
     "@ionic/core": "^4.4.2",

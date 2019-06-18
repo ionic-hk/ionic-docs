@@ -1,5 +1,5 @@
-import { commands } from '../data/cli.json';
-import plugins from '../data/native.json';
+import { commands } from '../data/translated-cli.json';
+import plugins from '../data/translated-native.json';
 import { join, resolve } from 'path';
 import { keyBy, slugify } from '../../src/utils';
 import Listr from 'listr';

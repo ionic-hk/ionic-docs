@@ -1,5 +1,5 @@
 import { Component, Listen, Prop, State, h } from '@stencil/core';
-import { Book, Checkmark, Logo, Translation } from '../../icons';
+import { Book, Checkmark, Logo, Outbound, Translation } from '../../icons';
 
 @Component({
   tag: 'docs-header',
@@ -143,15 +143,20 @@ export class DocsHeader {
               <a href="https://ionicframework.com/advisory" target="_blank">Enterprise Advisory</a>
             </section>
           </docs-dropdown>
+          <a class="outbound" href="https://github.com/ionic-hk/who-use-ionic" target="_blank">Showcase <Outbound/></a>
+          <a class="outbound" href="https://github.com/ionic-hk/ionic-docs" target="_blank">協助翻譯 <Outbound/></a>
           <docs-dropdown icon={Translation} align="right">
             <section>
-              <a href="https://ionicframework.com/en/docs/" class="link-active">
+              <a href="https://ionicframework.com/en/docs/" target="_blank">
                 English
+              </a>
+              <a href="https://ionicframework.com/jp/docs/" target="_blank">日本語</a>
+              <a href="https://ionicframework.com/zh-hant/docs/" class="link-active">
+                繁體中文
                 <svg viewBox="0 0 512 512" width="14">
                   <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
                 </svg>
               </a>
-              <a href="https://ionicframework.com/jp/docs/" target="_blank">日本語</a>
             </section>
             <section>
               <a href="https://ionicframework.com/translate" target="_blank">Translate</a>

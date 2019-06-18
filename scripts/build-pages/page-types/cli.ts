@@ -4,7 +4,7 @@ import {
 } from '../index';
 
 import renderMarkdown from '../markdown-renderer';
-import { commands } from '../../data/cli.json';
+import { commands } from '../../data/translated-cli.json';
 
 export default {
   title: 'Build CLI pages',
